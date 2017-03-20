@@ -86,8 +86,7 @@ JS
       private
 
       def shift_map(map, offset)
-        return map unless map && map[0] && map[0][:generated]
-        map.map do |m|
+        map && map.map do |m|
           m.merge(generated: [m[:generated][0] + offset, m[:generated][1]])
         end
       end
